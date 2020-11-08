@@ -1,0 +1,13 @@
+body {
+  background-color: skyblue;
+}
+ol {
+  border: 1px solid grey;
+  width: 300px;
+  height: auto;
+  margin-top: 100px;
+}
+
+#container {
+  display: flex;
+}
