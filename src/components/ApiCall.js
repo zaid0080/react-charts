@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import {
     BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-  } from 'recharts';
+} from 'recharts';
 
-function ApiCall() { 
-    const gitUrl = 'http://jsonplaceholder.typicode.com/users';
+function ApiCall() {
+    const gitUrl = 'https://forbes400.herokuapp.com/api/forbes400?limit=10';
     const [userData, setUserData] = useState({});
     useEffect(() => {
         getGibhubUrl();
@@ -13,6 +13,12 @@ function ApiCall() {
         const response = await fetch(gitUrl);
         const jsonData = await response.json();
         setUserData(jsonData);
+        // const labels = jsonData.map(function (e){
+        //     return e.person.name;
+        // });
+        // const values = jsonData.map(function (e){
+        //     return (e.realTimeWorth / 1000);
+        // });
     }
     return (
         <div>
@@ -32,7 +38,9 @@ function ApiCall() {
             <BarChart width={400} height={400} data={userData} margin={{
             top: 5, right: 30, left: 20, bottom: 5,}}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey='id'/>
+            <XAxis dataKey={userData.map(datajson => {
+                return datajson.name;
+            })}/>
             <YAxis />
             <Tooltip />
             <Bar dataKey="geo.lng" fill="#000"/>
@@ -42,4 +50,4 @@ function ApiCall() {
     )
 }
 
-export default ApiCall
+export default ApiCall;

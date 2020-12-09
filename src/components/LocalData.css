@@ -1,0 +1,22 @@
+.bar {
+  margin: 10px;
+  padding: 10px;
+}
+
+.bar-graph {
+  position: relative;
+  left: 200px;
+  top: 20px;
+  margin-bottom: 100px;
+}
+
+.recharts-rectangle {
+  margin: 20px;
+  padding: 30px;
+}
+
+.bar3 {
+  height: 500px;
+  width: 100%;
+  background-color: tomato;
+}

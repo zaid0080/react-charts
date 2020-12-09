@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <LocalData />
       {/* <Card /> */}
+      {/* <ApiCall /> */}
     </div>
   );
 }
